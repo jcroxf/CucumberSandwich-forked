@@ -64,6 +64,10 @@ class Browser {
         const element = await this.getElement(id);
         return await element.getCssValue('color');
     }
+    async elementDec(id) {
+        const element = await this.getElement(id);
+        return await element.getCssValue('text-decoration');
+    }
 
     /**
      * Emulates hovering the mouse over the element of the specified id
@@ -73,6 +77,17 @@ class Browser {
         const actions = this.headless.actions({async: true});
         await actions.move({origin: element}).perform();
     }
+
+    // async elementHoverFirstChild(id) {
+    //     const element = await this.getElement(id);
+    //     const actions = this.headless.actions({async: true});
+    //     await actions.move({origin: element}).perform();
+    // }
+
+    // async getElementChild(id) {
+    //     const selector = webdriver.By.id(id);
+    //     return await this.headless.findElement(selector);
+    // }
 
     /**
      * Convienience method for retrieving headless element by id

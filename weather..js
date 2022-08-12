@@ -1,5 +1,6 @@
 const Browser = require("./Browser");
 const browser = new Browser();
+//recommended based on experience- 500ms can be too small
 const timeout = 20000;
 
 beforeEach(async () => {
