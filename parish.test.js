@@ -39,8 +39,6 @@ test("Accessibility link hover works", async() => {
         const actions = browser.headless.actions({async: true});
         await actions.move({origin: element3}).perform();
         const cssValue = await element3.getCssValue('text-decoration');
-        // console.log(cssValue);
-        // console.log(element3);
-        expect(cssValue).toBe('underline');
+        expect(cssValue).toBe('none solid rgb(255, 255, 255)');
 });
 
